@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="/providerhome">Back</a><br>
+        {{range .}}
+            For the booking of {{.NumberPlate}} from {{ConvertTimeToString .StartTime}} to {{ConvertTimeToString .EndTime}}. <br> 
+            {{if eq .Redeemed "0"}}
+            You can redeem {{.Amount}}.
+                <form method="POST" action="/providerredeemprocess">
+                    <input type="text" name="numberplate" value="{{.NumberPlate}}" hidden>
+                    <input type="text" name="starttime" value="{{.StartTime}}" hidden>
+                    <input type="text" name="endtime" value="{{.EndTime}}" hidden>
+                    <input type="submit" value="Redeem">
+                </form>
+            {{else}}
+                You've redeemed {{.Amount}}.<br>
+            {{end}}
+        {{end}}
+    </body>
+</html>

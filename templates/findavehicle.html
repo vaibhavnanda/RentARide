@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="/riderhome">Back</a><br>
+        <form method="POST">
+            <input type="datetime-local" name="start">Start Time<br>
+            <input type="datetime-local" name="end">End Time<br>
+            <input type="submit" value="submit">
+        </form>
+        {{.Info}}<br>
+        Vehicles from {{ConvertTimeToString .StartTimeVal}} to {{ConvertTimeToString .EndTimeVal}} : <br>
+        {{range .AvlVehicles}}
+                {{range .VehicleInfo.ImageNames}}
+                    <img src="data:image/jpg;base64,{{.}}" width="100" height="100"/>
+                {{end}}
+            <br>
+            {{.AskingPrice}}<br>
+            {{.VehicleInfo.Name}}<br>
+            {{.VehicleInfo.NumberPlate}}<br>
+            {{.VehicleInfo.Wheels}} Wheeler<br>
+            {{.VehicleInfo.Location}}<br>
+            <br>
+            <form action="/bookavehicle">
+                <input type="text" name="numberplate" value="{{.NumberPlate}}" hidden>
+                <!-- Using $ to access variable outside the variable we are ranging on -->
+                <input type="text" name="starttime" value="{{$.StartTimeStr}}" hidden>
+                <input type="text" name="endtime" value="{{$.EndTimeStr}}" hidden>
+                <input type="submit" value="Book this vehicle"><br>
+            </form>
+            <br><br>
+        {{end}}
+
+    </body>
+</html>

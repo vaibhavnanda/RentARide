@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="/providerhome">Back</a><br>
+        {{.Reqd.Name}}<br>
+        {{.Reqd.NumberPlate}}<br>
+        {{.Reqd.Wheels}} Wheeler<br>
+        {{.Reqd.Location}}
+        <br>
+
+        {{range .Imgs}}
+            <img src="data:image/jpg;base64,{{.}}" width="100" height="100"/>
+        {{end}}
+        <br>
+        <button onclick="deleteVehicle(`{{.Reqd}}`)">Delete Vehicle</button>
+        <br>
+        <br>
+        <a href="/rentout?numberplate={{.Reqd.NumberPlate}}">Rent Out</a>
+
+        <script src="/assets/deleteVehicle.js"></script>
+    </body>
+</html>

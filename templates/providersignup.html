@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="/providerlogin">Back</a><br>
+        <form method="POST">
+            <input type="text" name="username" value="{{.FormData.Username}}">Username<br>
+            <input type="password" name="password" value="{{.StringPwd}}">Password<br>
+            <input type="text" name="name" value="{{.FormData.Name}}">Name<br>
+            <input type="text" name="address" value="{{.FormData.Address}}">Address<br>
+            <input type="text" name="adhaar" value="{{.FormData.Adhaar}}">Adhaar Number(Format: 123456781234)<br>
+            <input type="text" name="phone" value="{{.FormData.Phone}}">Phone<br>
+            <input type="submit" value="submit">
+        </form>
+        {{.Info}}
+    </body>
+</html>

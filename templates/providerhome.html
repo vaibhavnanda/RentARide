@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        Hello Provider, {{.Name}}<br>
+        <a href="/addvehicle">Add a vehicle</a><br>
+        <a href="/providerbookings">Bookings</a><br>
+        <a href="/provideravailablevehicles">Available Vehicles</a><br>
+        <a href="providerredeem">Redeem</a><br>
+        {{range .Vehicles}}
+            {{.Name}}
+            {{.NumberPlate}}
+            {{.Wheels}} Wheeler
+            {{.Location}}
+            <a href="/vehicleinfo?numberplate={{.NumberPlate}}">Get info</a><br>
+        {{end}}
+        <a href="/providerlogout">Logout</a><br>
+        
+    </body>
+</html>

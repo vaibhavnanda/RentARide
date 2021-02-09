@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="/provideravailablevehicles">Back</a>
+        <a href="/providerhome">Home</a><br>
+        {{.NumberPlate}}<br>
+        {{ConvertTimeToString .StartTime}} to {{ConvertTimeToString .EndTime}} <br>
+        {{.AskingPrice}}<br>
+        The vehicle will be deleted from available vehicles after the current booking's end time ( if any ). <br>
+        <form method="POST" action="/deleteavailablevehicle">
+            <input type="text" name="numberplate" value="{{.NumberPlate}}" hidden>
+            <input type="text" name="starttime" value="{{.StartTime}}" hidden>
+            <input type="text" name="endtime" value="{{.EndTime}}" hidden>
+            <input type="submit" value="Delete">
+        </form>
+        <br>
+    </body>
+</html>

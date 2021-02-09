@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="/riderbookings">Back</a>
+        <a href="/riderhome">Home</a><br>
+        {{.NumberPlate}}<br>
+        {{ConvertTimeToString .StartTime}} to {{ConvertTimeToString .EndTime}} <br>
+        {{.AskingPrice}}<br>
+        <form method="POST">
+            <input type="text" name="numberplate" value="{{.NumberPlate}}" hidden>
+            <input type="text" name="starttime" value="{{.StartTime}}" hidden>
+            <input type="text" name="endtime" value="{{.EndTime}}" hidden>
+            <input type="submit" value="Confirm">
+        </form>
+    </body>
+</html>

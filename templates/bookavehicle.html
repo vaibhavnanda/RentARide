@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="/findavehicle">Back</a>
+        <a href="/riderhome">Home</a><br>
+        {{range .AvlVehicle.VehicleInfo.ImageNames}}
+            <img src="data:image/jpg;base64,{{.}}" width="100" height="100"/>
+        {{end}}
+        {{.AvlVehicle.NumberPlate}}<br>
+        {{.AvlVehicle.VehicleInfo.Name}}<br>
+        {{.AvlVehicle.VehicleInfo.Wheels}} Wheeler<br>
+        {{.AvlVehicle.VehicleInfo.Location}}<br>
+        {{ConvertTimeToString .StartTimeVal}} to {{ConvertTimeToString .EndTimeVal}} <br>
+        <form method="POST" action="/confirm">
+            <input type="text" name="numberplate" value="{{.AvlVehicle.NumberPlate}}" hidden>
+            <input type="text" name="starttime" value="{{.StartTime}}" hidden>
+            <input type="text" name="endtime" value="{{.EndTime}}" hidden>
+            <input type="submit" value="Confirm Booking"><br>
+        </form>
+    </body>
+</html>

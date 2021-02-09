@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="/riderhome">Back</a><br>
+        Future Bookings: <br><br>
+        {{range .FutureBookings}}
+            {{.NumberPlate}}<br>
+            {{.AskingPrice}}<br>
+            {{ConvertTimeToString .StartTime}} to {{ConvertTimeToString .EndTime}} <br>
+            <form method="GET" action="/riderbookingdelete">
+            <input type="text" name="numberplate" value="{{.NumberPlate}}" hidden>
+            <input type="text" name="starttime" value="{{.StartTime}}" hidden>
+            <input type="text" name="endtime" value="{{.EndTime}}" hidden>
+            <input type="submit" value="Delete">
+            </form>
+            <br><br>
+        {{end}}
+        <br>
+        Past Bookings: <br><br>
+        {{range .PastBookings}}
+            {{.NumberPlate}}<br>
+            {{.AskingPrice}}<br>
+            {{ConvertTimeToString .StartTime}} to {{ConvertTimeToString .EndTime}} <br>
+            <br><br>
+        {{end}}
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="/vehicleinfo?numberplate={{.Reqd.NumberPlate}}">Back</a>
+        <a href="/providerhome">Home</a><br>
+        {{.Reqd.Name}}<br>
+        {{.Reqd.NumberPlate}}<br>
+        {{.Reqd.Wheels}} Wheeler<br>
+        {{.Reqd.Location}}<br>
+        <br>
+
+        <form method="POST" action="/rentoutprocess?numberplate={{.Reqd.NumberPlate}}">
+            <input type="datetime-local" name="start"><br>
+            <input type="datetime-local" name="end"><br>
+            <input type="number" name="price">Asking Price<br>
+            <input type="submit" value="submit">
+        </form>
+        <br>
+        {{.Info}}
+    </body>
+</html>

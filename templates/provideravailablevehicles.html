@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="/providerhome">Back</a><br>
+        {{range .}}
+            {{.NumberPlate}}<br>
+            {{ConvertTimeToString .StartTime}} to {{ConvertTimeToString .EndTime}} <br>
+            {{.AskingPrice}}<br>
+            <form method="GET" action="/deleteavailablevehicle">
+                <input type="text" name="numberplate" value="{{.NumberPlate}}" hidden>
+                <input type="text" name="starttime" value="{{.StartTime}}" hidden>
+                <input type="text" name="endtime" value="{{.EndTime}}" hidden>
+                <input type="submit" value="Delete">
+            </form>
+            <br>
+        {{end}}
+    </body>
+</html>

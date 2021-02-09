@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="/riderhome">Back</a><br>
+        {{range .RedeemInfo}}
+            {{if eq .Query "1"}}
+                You cancelled the ride {{.NumberPlate}} from {{ConvertTimeToString .StartTime}} to {{ConvertTimeToString .EndTime}}. <br> 
+                {{if eq .Redeemed "0"}}
+                You can redeem {{.Amount}}.
+                    <form method="POST" action="/riderredeemprocess">
+                        <input type="text" name="numberplate" value="{{.NumberPlate}}" hidden>
+                        <input type="text" name="starttime" value="{{.StartTime}}" hidden>
+                        <input type="text" name="endtime" value="{{.EndTime}}" hidden>
+                        <input type="submit" value="Redeem">
+                    </form>
+                {{else}}
+                    You've redeemed {{.Amount}}.<br>
+                {{end}}
+            {{else}}
+                Provider cancelled the ride {{.NumberPlate}} from {{ConvertTimeToString .StartTime}} to {{ConvertTimeToString .EndTime}}. <br>
+                {{if eq .Redeemed "0"}}
+                    You can redeem {{.Amount}}.
+                    <form method="POST" action="/riderredeemprocess">
+                        <input type="text" name="numberplate" value="{{.NumberPlate}}" hidden>
+                        <input type="text" name="starttime" value="{{.StartTime}}" hidden>
+                        <input type="text" name="endtime" value="{{.EndTime}}" hidden>
+                        <input type="submit" value="Redeem">
+                    </form>
+                {{else}}
+                    You've redeemed {{.Amount}}.<br>
+                {{end}}
+            {{end}}
+        {{end}}
+    </body>
+</html>

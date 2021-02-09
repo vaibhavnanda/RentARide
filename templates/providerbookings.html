@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="/providerhome">Back</a><br>
+        Future Bookings: <br><br>
+        {{range .FutureBookings}}
+            {{.NumberPlate}}<br>
+            {{.AskingPrice}}<br>
+            {{ConvertTimeToString .StartTime}} to {{ConvertTimeToString .EndTime}} <br>
+            <br><br>
+        {{end}}
+        <br><br>
+        Past Bookings: <br><br>
+        {{range .PastBookings}}
+            {{.NumberPlate}}<br>
+            {{.AskingPrice}}<br>
+            {{ConvertTimeToString .StartTime}} to {{ConvertTimeToString .EndTime}} <br>
+            <br><br>
+        {{end}}
+    </body>
+</html>
