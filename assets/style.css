@@ -1,7 +1,12 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none !important;
+}
 body {
 	background-color: #00f5d4;
 	color: #32295e;
-	list-style: none;
 }
 
 p {
@@ -9,12 +14,19 @@ p {
 }
 
 a {
-	text-decoration: none;
 	font-weight: bold;
 }
 
 a:hover {
 	color: #091540;
+}
+
+.navbar {
+	background: #ff7675 !important;
+}
+
+.navbar-light .navbar-brand {
+	color: #082063 !important;
 }
 
 .middle {
@@ -89,7 +101,8 @@ a:hover {
 	text-align: center;
 }
 
-.items input {
+.items input[type="text"],
+.items input[type="password"] {
 	margin-bottom: 20px;
 	padding: 2px 0px;
 	padding-bottom: 5px;
@@ -104,33 +117,29 @@ a:hover {
 	/* opacity: 0.55; */
 }
 
-#title {
+.title {
 	margin-bottom: 20px;
 	letter-spacing: 5px;
 	text-align: center;
-	/* opacity: 0.5; */
 }
 
-#button {
+.my-button {
 	padding: 12px 30px;
-	margin-top: 10px;
-	outline: none;
+	margin: 10px;
 	border: none;
-	font-size: large;
 	font-weight: 600;
-	letter-spacing: 5px;
+	letter-spacing: 2px;
 	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
 	cursor: pointer;
 	background: #ff7675;
 	color: #082063;
 }
 
-#button:active {
-	transform: translateY(2px);
-}
-
-#button text {
-	opacity: 0.5;
+.my-button:hover {
+	color: #091540;
+	transform: scale(1.1);
 }
 
 #sign {
@@ -149,8 +158,12 @@ a:hover {
 
 ::placeholder {
 	color: grey;
-	text-align: center;
+	text-align: left;
 	letter-spacing: 2px;
+}
+
+form label {
+	text-align: left;
 }
 
 form label,

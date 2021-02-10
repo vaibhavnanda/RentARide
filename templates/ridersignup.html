@@ -9,23 +9,14 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
     <body>
-        <!-- <a href="/riderlogin">Back</a><br>
-        <form method="POST">
-            <input type="text" id="form-text" name="username" value="{{.FormData.Username}}">Username<br>
-            <input type="password" name="password" value="{{.StringPwd}}">Password<br>
-            <input type="text" id="form-text" name="name" value="{{.FormData.Name}}">Name<br>
-            <input type="text" id="form-text" name="address" value="{{.FormData.Address}}">Address<br>
-            <input type="text" id="form-text" name="dl" value="{{.FormData.Dl}}">Driver's License (Format: DL1420110012345)<br>
-            <input type="text" id="form-text" name="phone" value="{{.FormData.Phone}}">Phone<br>
-            <input type="submit" id="button" value="submit">
-        </form>
-        {{.Info}} -->
-
-        <div class="container">
-            <h1 class="text-center">Rent A Ride</h1>
-            <a href="/riderlogin" id="button">&lt;Back</a>
+        <nav class="navbar navbar-light bg-light p-2">
+            <a class="navbar-brand" href="/">Rent A Ride</a>
+        </nav>
+        <div class="container mt-5">
+            <!-- <h1 class="text-center">Rent A Ride</h1> -->
+            <a href="/riderlogin" class="my-button">&lt;Back</a>
             <div class="login-container mt-5">
-                <h2 id="title">Sign up</h2>            
+                <h2 class="title">Sign up</h2>            
                 <div class="items">
                     <p class="login-warning">{{.Info}}</p>
                     <form method="POST">
@@ -54,7 +45,7 @@
                             <input type="text" id="form-text" name="phone" value="{{.FormData.Phone}}">
                         </div>            
                         
-                        <input type="submit" id="button" value="Submit">
+                        <input type="submit" class="my-button" value="Submit">
                     </form>
                 </div>                
             </div>
