@@ -73,28 +73,31 @@ a:hover {
 	margin-right: auto;
 	align-items: center;
 	justify-content: center;
-	padding: 50px 100px;
+	padding: 50px 20px;
 	background-color: #fff;
 	border-radius: 5px;
-	width: 25em;
+	width: 30em;
 	/* height: 40em; */
 }
 
-.items {
+/* .items {
 	display: flex;
 	flex-direction: column;
+} */
+
+.items {
+	text-align: center;
 }
 
 .items input {
 	margin-bottom: 20px;
 	padding: 2px 0px;
 	padding-bottom: 5px;
-	width: 250px;
+	width: 300px;
 	background-color: transparent;
 	border: none;
 	outline: none;
 	border-bottom: 1.5px solid;
-
 	border-bottom-color: grey;
 	font-weight: 700;
 	color: #585858;
@@ -148,4 +151,9 @@ a:hover {
 	color: grey;
 	text-align: center;
 	letter-spacing: 2px;
+}
+
+form label,
+form input {
+	display: block;
 }
