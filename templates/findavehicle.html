@@ -1,14 +1,36 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <a href="/riderhome">Back</a><br>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Vehicle | Rent a Ride</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light p-2 mb-2">
+        <a class="navbar-brand" href="/">Rent A Ride</a>
+    </nav>
+    <a class="btn btn-primary m-2" href="/riderhome">Back</a><br>
+
+    <div class="container mt-5">
+        <p class="text-warning">{{.Info}}</p>
         <form method="POST">
-            <input type="datetime-local" name="start">Start Time<br>
-            <input type="datetime-local" name="end">End Time<br>
-            <input type="submit" value="submit">
+            <div class="form-group w-50">
+                <div class="mb-2">
+                    <label for="start-time">Start Time</label>
+                    <input class="form-control" type="datetime-local" name="start">
+                </div>
+                <div class="mb-2">
+                    <label for="end-time">End Time</label>
+                    <input class="form-control" type="datetime-local" name="end">
+                </div>
+                <input class="btn btn-primary" type="submit" value="Find Vehicle">
+            </div>
         </form>
-        {{.Info}}<br>
-        Vehicles from {{ConvertTimeToString .StartTimeVal}} to {{ConvertTimeToString .EndTimeVal}} : <br>
+        
+        <p>Vehicles from {{ConvertTimeToString .StartTimeVal}} to {{ConvertTimeToString .EndTimeVal}}: </p>
         {{range .AvlVehicles}}
                 {{range .VehicleInfo.ImageNames}}
                     <img src="data:image/jpg;base64,{{.}}" width="100" height="100"/>
@@ -29,6 +51,6 @@
             </form>
             <br><br>
         {{end}}
-
+    </div>
     </body>
 </html>
