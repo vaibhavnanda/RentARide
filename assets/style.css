@@ -125,3 +125,7 @@ form label,
 form input {
 	display: block;
 }
+
+.card-group > .card {
+	margin: 5px;
+}
