@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Login | Rent a Ride</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
     <body>
-        <a href="/">Back</a><br>
-        Hello Provider<br>
-        <form method="POST">
-            Username: <input type="text" name="username"><br>
-            Password: <input type="password" name="password"><br>
-            <input type="submit" value="submit"><br>
-            <a href="/providersignup">Sign Up</a><br>
-        </form>
-        {{.}}
+        <nav class="navbar navbar-light bg-light p-2">
+            <a class="navbar-brand" href="/">Rent A Ride</a>
+        </nav>
+        <div class="container mt-5">
+            <a href="/" class="btn btn-primary">&lt;Back</a>
+            <div class="login-container mt-5">
+                <h2 class="title">Log in</h2>            
+                <div class="items">
+                    <p class="login-warning">{{.}}</p>
+                    <form method="POST">
+                        <input type="text" id="form-text" placeholder="Username" name="username" />
+                        <input type="password" id="form-password" placeholder="Password" name="password" />
+                        <input type="submit" class="btn btn-primary" value="Log in"><br>
+                        <span>New to our platform? &nbsp;</span><a id="sign" type="submit" href="/providersignup"> Sign Up</a>
+                    </form>
+                </div>                
+            </div>
+        </div>
     </body>
 </html>

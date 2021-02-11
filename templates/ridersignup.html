@@ -14,7 +14,7 @@
         </nav>
         <div class="container mt-5">
             <!-- <h1 class="text-center">Rent A Ride</h1> -->
-            <a href="/riderlogin" class="my-button">&lt;Back</a>
+            <a href="/riderlogin" class="btn btn-primary">&lt;Back</a>
             <div class="login-container mt-5">
                 <h2 class="title">Sign up</h2>            
                 <div class="items">
@@ -22,7 +22,7 @@
                     <form method="POST">
                         <div>
                             <label for="username">Username</label>
-                            <input type="text" id="form-text" name="username" value="{{.FormData.Username}}" />
+                            <input type="text" name="username" value="{{.FormData.Username}}" />
                         </div>
                         <div>
                             <label for="password">Password</label>
@@ -30,22 +30,22 @@
                         </div>
                         <div>
                             <label for="username">Name</label>
-                            <input type="text" id="form-text" name="name" value="{{.FormData.Name}}">
+                            <input type="text" name="name" value="{{.FormData.Name}}">
                         </div>
                         <div>
                             <label for="address">Address</label>
-                            <input type="text" id="form-text" name="address" value="{{.FormData.Address}}">
+                            <input type="text" name="address" value="{{.FormData.Address}}">
                         </div>
                         <div>
                             <label for="license">Driver's License (Format: DL1420110012345)</label>
-                            <input type="text" id="form-text" name="dl" value="{{.FormData.Dl}}">
+                            <input type="text" name="dl" value="{{.FormData.Dl}}">
                         </div>
                         <div>
                             <label for="phone">Phone</label>
-                            <input type="text" id="form-text" name="phone" value="{{.FormData.Phone}}">
+                            <input type="text" name="phone" value="{{.FormData.Phone}}">
                         </div>            
                         
-                        <input type="submit" class="my-button" value="Submit">
+                        <input type="submit" class="btn btn-primary" value="Submit">
                     </form>
                 </div>                
             </div>

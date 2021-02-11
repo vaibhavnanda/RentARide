@@ -13,61 +13,20 @@ p {
 	font-size: larger;
 }
 
-a {
-	font-weight: bold;
-}
-
-a:hover {
-	color: #091540;
-}
-
 .navbar {
-	background: #ff7675 !important;
+	background: #845ec2 !important;
 }
 
 .navbar-light .navbar-brand {
-	color: #082063 !important;
+	color: #f9f871 !important;
 }
 
 .middle {
 	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
-.login-btn {
-	position: relative;
-	display: block;
-	color: #ff7675;
-	font-size: 14px;
-	font-family: verdana;
-	text-decoration: none;
-	margin: 30px;
-	border: 2px solid #ff7675;
-	padding: 14px 60px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	overflow: hidden;
-	transition: 0.6s all ease;
-}
-.login-btn::before {
-	background: #ff7675;
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: -1;
-	transition: all 0.4s ease;
-}
-
-.btn1::before {
-	width: 0;
-	height: 100%;
-}
-
-.btn1:hover::before {
-	width: 100%;
+.middle a {
+	margin-right: 10px;
 }
 
 .login-warning {
@@ -77,7 +36,6 @@ a:hover {
 }
 
 /* Login CSS */
-
 .login-container {
 	display: flex;
 	flex-direction: column;
@@ -89,13 +47,7 @@ a:hover {
 	background-color: #fff;
 	border-radius: 5px;
 	width: 30em;
-	/* height: 40em; */
 }
-
-/* .items {
-	display: flex;
-	flex-direction: column;
-} */
 
 .items {
 	text-align: center;
@@ -114,7 +66,6 @@ a:hover {
 	border-bottom-color: grey;
 	font-weight: 700;
 	color: #585858;
-	/* opacity: 0.55; */
 }
 
 .title {
@@ -137,15 +88,19 @@ a:hover {
 	color: #082063;
 }
 
-.my-button:hover {
-	color: #091540;
-	transform: scale(1.1);
+.btn-primary {
+	padding: 8px 30px !important;
+	background-color: #ff7675 !important;
+	border-color: transparent;
+}
+
+.btn-primary:hover {
+	background-color: #f74e4e !important;
+	border-color: transparent;
 }
 
 #sign {
-	/* margin-top: 4em; */
 	text-align: right;
-	/* letter-spacing: 5px; */
 	cursor: pointer;
 	color: #082063;
 	font-weight: bolder;
