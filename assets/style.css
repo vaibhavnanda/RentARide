@@ -10,7 +10,7 @@ body {
 }
 
 p {
-	font-size: larger;
+	margin-bottom: 0 !important;
 }
 
 .navbar {
@@ -89,7 +89,7 @@ p {
 }
 
 .btn-primary {
-	padding: 8px 30px !important;
+	/* padding: 8px 30px !important; */
 	background-color: #ff7675 !important;
 	border-color: transparent;
 }
@@ -128,4 +128,8 @@ form input {
 
 .card-group > .card {
 	margin: 5px;
+}
+
+.vehicle-info {
+	display: inline-block;
 }
