@@ -133,3 +133,7 @@ form input {
 .vehicle-info {
 	display: inline-block;
 }
+
+.bookings-container {
+	min-height: 200px;
+}

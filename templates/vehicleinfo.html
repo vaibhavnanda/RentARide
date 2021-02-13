@@ -17,10 +17,10 @@
     <div class="container m-2 p-4">
         <div class="vehicle-info">
             <p><strong>{{.Reqd.Name}}</strong> </p>
-                <p>{{.Reqd.NumberPlate}}</p>
-                <p>{{.Reqd.Wheels}} Wheeler</p>
-                <p>{{.Reqd.Location}}</p>
-            </div>        
+            <p>{{.Reqd.NumberPlate}}</p>
+            <p>{{.Reqd.Wheels}} Wheeler</p>
+            <p>{{.Reqd.Location}}</p>
+        </div>        
         <div class="row">
             {{range .Imgs}}
                 <img class="col-sm-3" src="data:image/jpg;base64,{{.}}"/>

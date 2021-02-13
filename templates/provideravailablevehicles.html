@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <a href="/providerhome">Back</a><br>
-        {{range .}}
-            {{.NumberPlate}}<br>
-            {{ConvertTimeToString .StartTime}} to {{ConvertTimeToString .EndTime}} <br>
-            {{.AskingPrice}}<br>
-            <form method="GET" action="/deleteavailablevehicle">
-                <input type="text" name="numberplate" value="{{.NumberPlate}}" hidden>
-                <input type="text" name="starttime" value="{{.StartTime}}" hidden>
-                <input type="text" name="endtime" value="{{.EndTime}}" hidden>
-                <input type="submit" value="Delete">
-            </form>
-            <br>
-        {{end}}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Vehicles | Rent a Ride</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light p-2 mb-2">
+        <a class="navbar-brand" href="/">Rent A Ride</a>
+    </nav>
+
+    <a class="btn btn-primary m-2" href="/providerhome">&lt; Back</a>
+
+    <div class="container m-2 p-4">
+        <div class="vehicle-info">
+            {{range .}}
+            <div class="mb-2">
+                <p>License Plate: {{.NumberPlate}}</p>
+                <p>Available from: {{ConvertTimeToString .StartTime}} to {{ConvertTimeToString .EndTime}}</p>
+                <p>Asking Price: {{.AskingPrice}}</p>
+                <form method="GET" action="/deleteavailablevehicle">
+                    <input type="text" name="numberplate" value="{{.NumberPlate}}" hidden>
+                    <input type="text" name="starttime" value="{{.StartTime}}" hidden>
+                    <input type="text" name="endtime" value="{{.EndTime}}" hidden>
+                    <input class="btn btn-danger" type="submit" value="Delete">
+                </form>
+                <hr>
+            </div>
+            {{end}}
+        </div>
+    </div>
     </body>
 </html>
